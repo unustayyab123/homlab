@@ -1,0 +1,534 @@
+2022-12-20 23:17:12,174 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show ip int brief'} on 3 hosts
+2022-12-20 23:27:25,057 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show ip int brief'} on 3 hosts
+2022-12-20 23:35:00,728 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show ip int brief'} on 3 hosts
+2022-12-20 23:37:09,244 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show ip int brief'} on 3 hosts
+2022-12-21 14:12:26,338 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show ip int br'} on 3 hosts
+2022-12-21 14:13:09,244 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show ip int br'} on 3 hosts
+2022-12-21 14:34:55,972 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show ip int br'} on 3 hosts
+2022-12-21 14:35:49,213 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show ip int br'} on 3 hosts
+2022-12-21 14:57:07,603 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_config' with args {'config_commands': ['logging 1.2.3.4', 'logging 4.3.2.1']} on 3 hosts
+2022-12-21 15:06:35,017 -  nornir.core -     INFO -        run() - Running task 'netmiko_file_transfer' with args {'source_file': 'nornir1.log', 'dest_file': 'nornir1.log'} on 3 hosts
+2022-12-21 16:37:47,884 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show ip int br'} on 4 hosts
+2022-12-21 16:40:43,713 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show ip int br'} on 4 hosts
+2022-12-21 16:41:52,010 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show ip int br'} on 5 hosts
+2022-12-21 17:16:41,978 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_config' with args {'config_commands': ['ip scp server enable']} on 5 hosts
+2022-12-21 17:18:03,494 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_config' with args {'config_commands': ['ip scp server enable']} on 5 hosts
+2022-12-21 17:18:05,427 -  nornir.core -     INFO -        run() - Running task 'netmiko_file_transfer' with args {'source_file': 'nornir1.log', 'dest_file': 'nornir1.log'} on 5 hosts
+2022-12-21 17:18:07,229 - nornir.core.task -    ERROR -      start() - Host 'Arista2': task 'netmiko_file_transfer' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\nornir_netmiko\tasks\netmiko_file_transfer.py", line 26, in netmiko_file_transfer
+    scp_result = file_transfer(
+                 ^^^^^^^^^^^^^^
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\netmiko\scp_functions.py", line 134, in file_transfer
+    verifyspace_and_transferfile(scp_transfer)
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\netmiko\scp_functions.py", line 39, in verifyspace_and_transferfile
+    scp_transfer.transfer_file()
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\netmiko\scp_handler.py", line 363, in transfer_file
+    self.put_file()
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\netmiko\scp_handler.py", line 376, in put_file
+    self.scp_conn.scp_transfer_file(self.source_file, destination)
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\netmiko\scp_handler.py", line 46, in scp_transfer_file
+    self.scp_client.put(source_file, dest_file)
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\scp.py", line 201, in put
+    self._send_files(files)
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\scp.py", line 310, in _send_files
+    self._send_file(fl, name, mode, size)
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\scp.py", line 320, in _send_file
+    self._recv_confirm()
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\scp.py", line 404, in _recv_confirm
+    raise SCPException(asunicode(msg[1:]))
+scp.SCPException: scp: flash:/nornir1.log: No such file or directory
+
+
+2022-12-21 17:18:07,244 - nornir.core.task -    ERROR -      start() - Host 'Arista1': task 'netmiko_file_transfer' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\nornir_netmiko\tasks\netmiko_file_transfer.py", line 26, in netmiko_file_transfer
+    scp_result = file_transfer(
+                 ^^^^^^^^^^^^^^
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\netmiko\scp_functions.py", line 134, in file_transfer
+    verifyspace_and_transferfile(scp_transfer)
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\netmiko\scp_functions.py", line 39, in verifyspace_and_transferfile
+    scp_transfer.transfer_file()
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\netmiko\scp_handler.py", line 363, in transfer_file
+    self.put_file()
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\netmiko\scp_handler.py", line 376, in put_file
+    self.scp_conn.scp_transfer_file(self.source_file, destination)
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\netmiko\scp_handler.py", line 46, in scp_transfer_file
+    self.scp_client.put(source_file, dest_file)
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\scp.py", line 201, in put
+    self._send_files(files)
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\scp.py", line 310, in _send_files
+    self._send_file(fl, name, mode, size)
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\scp.py", line 320, in _send_file
+    self._recv_confirm()
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\scp.py", line 404, in _recv_confirm
+    raise SCPException(asunicode(msg[1:]))
+scp.SCPException: scp: flash:/nornir1.log: No such file or directory
+
+
+2022-12-21 17:19:26,940 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_config' with args {'config_commands': ['ip scp server enable']} on 5 hosts
+2022-12-21 17:19:28,769 -  nornir.core -     INFO -        run() - Running task 'netmiko_file_transfer' with args {'source_file': 'nornir1.log', 'dest_file': 'nornir1.log'} on 5 hosts
+2022-12-21 17:19:30,511 - nornir.core.task -    ERROR -      start() - Host 'Arista2': task 'netmiko_file_transfer' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\nornir_netmiko\tasks\netmiko_file_transfer.py", line 26, in netmiko_file_transfer
+    scp_result = file_transfer(
+                 ^^^^^^^^^^^^^^
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\netmiko\scp_functions.py", line 134, in file_transfer
+    verifyspace_and_transferfile(scp_transfer)
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\netmiko\scp_functions.py", line 39, in verifyspace_and_transferfile
+    scp_transfer.transfer_file()
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\netmiko\scp_handler.py", line 363, in transfer_file
+    self.put_file()
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\netmiko\scp_handler.py", line 376, in put_file
+    self.scp_conn.scp_transfer_file(self.source_file, destination)
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\netmiko\scp_handler.py", line 46, in scp_transfer_file
+    self.scp_client.put(source_file, dest_file)
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\scp.py", line 201, in put
+    self._send_files(files)
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\scp.py", line 310, in _send_files
+    self._send_file(fl, name, mode, size)
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\scp.py", line 320, in _send_file
+    self._recv_confirm()
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\scp.py", line 404, in _recv_confirm
+    raise SCPException(asunicode(msg[1:]))
+scp.SCPException: scp: flash:/nornir1.log: No such file or directory
+
+
+2022-12-21 17:19:30,908 - nornir.core.task -    ERROR -      start() - Host 'Arista1': task 'netmiko_file_transfer' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\nornir_netmiko\tasks\netmiko_file_transfer.py", line 26, in netmiko_file_transfer
+    scp_result = file_transfer(
+                 ^^^^^^^^^^^^^^
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\netmiko\scp_functions.py", line 134, in file_transfer
+    verifyspace_and_transferfile(scp_transfer)
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\netmiko\scp_functions.py", line 39, in verifyspace_and_transferfile
+    scp_transfer.transfer_file()
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\netmiko\scp_handler.py", line 363, in transfer_file
+    self.put_file()
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\netmiko\scp_handler.py", line 376, in put_file
+    self.scp_conn.scp_transfer_file(self.source_file, destination)
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\netmiko\scp_handler.py", line 46, in scp_transfer_file
+    self.scp_client.put(source_file, dest_file)
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\scp.py", line 201, in put
+    self._send_files(files)
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\scp.py", line 310, in _send_files
+    self._send_file(fl, name, mode, size)
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\scp.py", line 320, in _send_file
+    self._recv_confirm()
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\scp.py", line 404, in _recv_confirm
+    raise SCPException(asunicode(msg[1:]))
+scp.SCPException: scp: flash:/nornir1.log: No such file or directory
+
+
+2022-12-21 17:19:31,745 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netmiko_file_transfer' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\nornir_netmiko\tasks\netmiko_file_transfer.py", line 26, in netmiko_file_transfer
+    scp_result = file_transfer(
+                 ^^^^^^^^^^^^^^
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\netmiko\scp_functions.py", line 137, in file_transfer
+    if scp_transfer.verify_file():
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\netmiko\scp_handler.py", line 382, in verify_file
+    return self.compare_md5()
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\netmiko\scp_handler.py", line 339, in compare_md5
+    remote_md5 = self.remote_md5()
+                 ^^^^^^^^^^^^^^^^^
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\netmiko\scp_handler.py", line 357, in remote_md5
+    dest_md5 = self.process_md5(dest_md5)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\netmiko\scp_handler.py", line 334, in process_md5
+    raise ValueError(f"Invalid output from MD5 command: {md5_output}")
+ValueError: Invalid output from MD5 command: 
+%Error computing MD5 hash flash:/nornir1.log (File not found)
+
+2022-12-21 20:34:40,744 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_config' with args {'config_commands': ['ip scp server enable']} on 5 hosts
+2022-12-21 20:35:12,025 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_config' with args {'config_commands': ['show ip int brief']} on 5 hosts
+2022-12-21 20:36:16,541 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show ip int br'} on 5 hosts
+2022-12-21 20:58:34,879 -  nornir.core -     INFO -        run() - Running task 'napalm_cli' with args {'commands': ['show ip int brief', 'show run |i hostname']} on 5 hosts
+2022-12-21 20:58:34,970 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'napalm_cli' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\nornir_napalm\plugins\tasks\napalm_cli.py", line 19, in napalm_cli
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\nornir\core\inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\nornir\core\inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\nornir_napalm\plugins\connections\__init__.py", line 55, in open
+    network_driver = get_network_driver(platform)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\napalm\base\__init__.py", line 99, in get_network_driver
+    raise ModuleImportError(
+napalm.base.exceptions.ModuleImportError: Cannot import "cisco_ios". Is the library installed?
+
+2022-12-21 20:58:34,971 - nornir.core.task -    ERROR -      start() - Host 'Arista2': task 'napalm_cli' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\nornir_napalm\plugins\tasks\napalm_cli.py", line 19, in napalm_cli
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\nornir\core\inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\nornir\core\inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\nornir_napalm\plugins\connections\__init__.py", line 55, in open
+    network_driver = get_network_driver(platform)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\napalm\base\__init__.py", line 99, in get_network_driver
+    raise ModuleImportError(
+napalm.base.exceptions.ModuleImportError: Cannot import "cisco_ios". Is the library installed?
+
+2022-12-21 20:58:34,972 - nornir.core.task -    ERROR -      start() - Host 'Arista1': task 'napalm_cli' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\nornir_napalm\plugins\tasks\napalm_cli.py", line 19, in napalm_cli
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\nornir\core\inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\nornir\core\inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\nornir_napalm\plugins\connections\__init__.py", line 55, in open
+    network_driver = get_network_driver(platform)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\napalm\base\__init__.py", line 99, in get_network_driver
+    raise ModuleImportError(
+napalm.base.exceptions.ModuleImportError: Cannot import "cisco_ios". Is the library installed?
+
+2022-12-21 20:58:34,972 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'napalm_cli' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\nornir_napalm\plugins\tasks\napalm_cli.py", line 19, in napalm_cli
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\nornir\core\inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\nornir\core\inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\nornir_napalm\plugins\connections\__init__.py", line 55, in open
+    network_driver = get_network_driver(platform)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\napalm\base\__init__.py", line 99, in get_network_driver
+    raise ModuleImportError(
+napalm.base.exceptions.ModuleImportError: Cannot import "cisco_ios". Is the library installed?
+
+2022-12-21 20:58:34,973 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'napalm_cli' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\nornir_napalm\plugins\tasks\napalm_cli.py", line 19, in napalm_cli
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\nornir\core\inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\nornir\core\inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\nornir_napalm\plugins\connections\__init__.py", line 55, in open
+    network_driver = get_network_driver(platform)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\napalm\base\__init__.py", line 99, in get_network_driver
+    raise ModuleImportError(
+napalm.base.exceptions.ModuleImportError: Cannot import "cisco_ios". Is the library installed?
+
+2022-12-21 21:03:24,161 -  nornir.core -     INFO -        run() - Running task 'napalm_cli' with args {'commands': ['show ip int brief']} on 5 hosts
+2022-12-21 21:03:24,184 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'napalm_cli' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\nornir_napalm\plugins\tasks\napalm_cli.py", line 19, in napalm_cli
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\nornir\core\inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\nornir\core\inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\nornir_napalm\plugins\connections\__init__.py", line 55, in open
+    network_driver = get_network_driver(platform)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\napalm\base\__init__.py", line 99, in get_network_driver
+    raise ModuleImportError(
+napalm.base.exceptions.ModuleImportError: Cannot import "cisco_ios". Is the library installed?
+
+2022-12-21 21:03:24,190 - nornir.core.task -    ERROR -      start() - Host 'Arista2': task 'napalm_cli' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\nornir_napalm\plugins\tasks\napalm_cli.py", line 19, in napalm_cli
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\nornir\core\inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\nornir\core\inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\nornir_napalm\plugins\connections\__init__.py", line 55, in open
+    network_driver = get_network_driver(platform)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\napalm\base\__init__.py", line 99, in get_network_driver
+    raise ModuleImportError(
+napalm.base.exceptions.ModuleImportError: Cannot import "cisco_ios". Is the library installed?
+
+2022-12-21 21:03:24,197 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'napalm_cli' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\nornir_napalm\plugins\tasks\napalm_cli.py", line 19, in napalm_cli
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\nornir\core\inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\nornir\core\inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\nornir_napalm\plugins\connections\__init__.py", line 55, in open
+    network_driver = get_network_driver(platform)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\napalm\base\__init__.py", line 99, in get_network_driver
+    raise ModuleImportError(
+napalm.base.exceptions.ModuleImportError: Cannot import "cisco_ios". Is the library installed?
+
+2022-12-21 21:03:24,202 - nornir.core.task -    ERROR -      start() - Host 'Arista1': task 'napalm_cli' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\nornir_napalm\plugins\tasks\napalm_cli.py", line 19, in napalm_cli
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\nornir\core\inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\nornir\core\inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\nornir_napalm\plugins\connections\__init__.py", line 55, in open
+    network_driver = get_network_driver(platform)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\napalm\base\__init__.py", line 99, in get_network_driver
+    raise ModuleImportError(
+napalm.base.exceptions.ModuleImportError: Cannot import "cisco_ios". Is the library installed?
+
+2022-12-21 21:03:24,205 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'napalm_cli' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\nornir_napalm\plugins\tasks\napalm_cli.py", line 19, in napalm_cli
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\nornir\core\inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\nornir\core\inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\nornir_napalm\plugins\connections\__init__.py", line 55, in open
+    network_driver = get_network_driver(platform)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\napalm\base\__init__.py", line 99, in get_network_driver
+    raise ModuleImportError(
+napalm.base.exceptions.ModuleImportError: Cannot import "cisco_ios". Is the library installed?
+
+2022-12-21 21:07:22,559 -  nornir.core -     INFO -        run() - Running task 'napalm_cli' with args {'commands': ['show ip int brief']} on 3 hosts
+2022-12-21 21:07:22,579 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'napalm_cli' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\nornir_napalm\plugins\tasks\napalm_cli.py", line 19, in napalm_cli
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\nornir\core\inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\nornir\core\inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\nornir_napalm\plugins\connections\__init__.py", line 55, in open
+    network_driver = get_network_driver(platform)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\napalm\base\__init__.py", line 99, in get_network_driver
+    raise ModuleImportError(
+napalm.base.exceptions.ModuleImportError: Cannot import "cisco_ios". Is the library installed?
+
+2022-12-21 21:07:22,584 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'napalm_cli' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\nornir_napalm\plugins\tasks\napalm_cli.py", line 19, in napalm_cli
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\nornir\core\inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\nornir\core\inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\nornir_napalm\plugins\connections\__init__.py", line 55, in open
+    network_driver = get_network_driver(platform)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\napalm\base\__init__.py", line 99, in get_network_driver
+    raise ModuleImportError(
+napalm.base.exceptions.ModuleImportError: Cannot import "cisco_ios". Is the library installed?
+
+2022-12-21 21:07:22,587 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'napalm_cli' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\nornir_napalm\plugins\tasks\napalm_cli.py", line 19, in napalm_cli
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\nornir\core\inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\nornir\core\inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\nornir_napalm\plugins\connections\__init__.py", line 55, in open
+    network_driver = get_network_driver(platform)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\napalm\base\__init__.py", line 99, in get_network_driver
+    raise ModuleImportError(
+napalm.base.exceptions.ModuleImportError: Cannot import "cisco_ios". Is the library installed?
+
+2022-12-21 21:09:49,387 -  nornir.core -     INFO -        run() - Running task 'napalm_cli' with args {'commands': ['show ip int brief']} on 3 hosts
+2022-12-21 21:09:49,409 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'napalm_cli' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\nornir_napalm\plugins\tasks\napalm_cli.py", line 19, in napalm_cli
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\nornir\core\inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\nornir\core\inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\nornir_napalm\plugins\connections\__init__.py", line 55, in open
+    network_driver = get_network_driver(platform)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\napalm\base\__init__.py", line 99, in get_network_driver
+    raise ModuleImportError(
+napalm.base.exceptions.ModuleImportError: Cannot import "cisco_ios". Is the library installed?
+
+2022-12-21 21:09:49,411 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'napalm_cli' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\nornir_napalm\plugins\tasks\napalm_cli.py", line 19, in napalm_cli
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\nornir\core\inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\nornir\core\inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\nornir_napalm\plugins\connections\__init__.py", line 55, in open
+    network_driver = get_network_driver(platform)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\napalm\base\__init__.py", line 99, in get_network_driver
+    raise ModuleImportError(
+napalm.base.exceptions.ModuleImportError: Cannot import "cisco_ios". Is the library installed?
+
+2022-12-21 21:09:49,415 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'napalm_cli' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\nornir_napalm\plugins\tasks\napalm_cli.py", line 19, in napalm_cli
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\nornir\core\inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\nornir\core\inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\nornir_napalm\plugins\connections\__init__.py", line 55, in open
+    network_driver = get_network_driver(platform)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\napalm\base\__init__.py", line 99, in get_network_driver
+    raise ModuleImportError(
+napalm.base.exceptions.ModuleImportError: Cannot import "cisco_ios". Is the library installed?
+
+2022-12-21 21:10:36,961 -  nornir.core -     INFO -        run() - Running task 'napalm_cli' with args {'commands': ['show ip int brief']} on 3 hosts
+2022-12-21 21:12:09,538 -  nornir.core -     INFO -        run() - Running task 'napalm_cli' with args {'commands': ['show ip int brief']} on 5 hosts
+2022-12-21 21:22:27,603 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_arp_table']} on 5 hosts
+2022-12-21 21:22:28,971 - nornir.core.task -    ERROR -      start() - Host 'Arista2': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\nornir_napalm\plugins\tasks\napalm_get.py", line 44, in napalm_get
+    result[g] = method(**options)
+                ^^^^^^^^^^^^^^^^^
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\napalm\ios\ios.py", line 2453, in get_arp_table
+    raise ValueError("Unexpected output from: {}".format(line.split()))
+ValueError: Unexpected output from: ['192.168.100.1', '0:04:14', 'a47c.c993.1254', 'Management1']
+
+2022-12-21 21:22:29,435 - nornir.core.task -    ERROR -      start() - Host 'Arista1': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\nornir_napalm\plugins\tasks\napalm_get.py", line 44, in napalm_get
+    result[g] = method(**options)
+                ^^^^^^^^^^^^^^^^^
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\napalm\ios\ios.py", line 2453, in get_arp_table
+    raise ValueError("Unexpected output from: {}".format(line.split()))
+ValueError: Unexpected output from: ['192.168.100.1', '0:04:15', 'a47c.c993.1254', 'Management1']
+
+2022-12-21 21:23:26,116 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_arp_table']} on 5 hosts
+2022-12-21 21:23:27,383 - nornir.core.task -    ERROR -      start() - Host 'Arista2': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\nornir_napalm\plugins\tasks\napalm_get.py", line 44, in napalm_get
+    result[g] = method(**options)
+                ^^^^^^^^^^^^^^^^^
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\napalm\ios\ios.py", line 2453, in get_arp_table
+    raise ValueError("Unexpected output from: {}".format(line.split()))
+ValueError: Unexpected output from: ['192.168.100.1', '0:00:12', 'a47c.c993.1254', 'Management1']
+
+2022-12-21 21:23:27,649 - nornir.core.task -    ERROR -      start() - Host 'Arista1': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\nornir_napalm\plugins\tasks\napalm_get.py", line 44, in napalm_get
+    result[g] = method(**options)
+                ^^^^^^^^^^^^^^^^^
+  File "C:\Users\younus\PycharmProjects\unuspython\venv\Lib\site-packages\napalm\ios\ios.py", line 2453, in get_arp_table
+    raise ValueError("Unexpected output from: {}".format(line.split()))
+ValueError: Unexpected output from: ['192.168.100.1', '0:00:12', 'a47c.c993.1254', 'Management1']
+
+2022-12-21 21:25:29,504 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 5 hosts
+2022-12-21 21:42:35,047 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show ip int br'} on 5 hosts
+2022-12-21 22:12:55,245 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_config' with args {'config_commands': ['show ip int brief', 'show run | i hostname']} on 5 hosts
+2022-12-21 22:14:53,231 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show ip int br'} on 5 hosts
+2022-12-21 22:18:44,258 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show ip int br'} on 5 hosts
+2022-12-21 22:21:16,140 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show ip int br'} on 5 hosts
+2022-12-21 22:23:34,802 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show ip int br'} on 5 hosts
+2022-12-21 22:29:59,078 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_config' with args {'config_file': 'C:\\Users\\younus\\Desktop\\python scripts\\commands.txt'} on 5 hosts
+2022-12-21 22:31:57,997 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_config' with args {'config_file': 'C:\\Users\\younus\\Desktop\\python scripts\\commands.txt'} on 5 hosts
+2022-12-21 22:34:52,581 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_config' with args {'config_file': 'C:\\Users\\younus\\Desktop\\python scripts\\commands.txt'} on 3 hosts
+2022-12-21 22:41:56,844 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_config' with args {'config_file': 'C:\\Users\\younus\\Desktop\\python scripts\\commands.txt'} on 3 hosts
+2022-12-21 22:43:22,502 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_config' with args {'config_file': 'C:\\Users\\younus\\Desktop\\python scripts\\commands.txt'} on 3 hosts

@@ -1,0 +1,7 @@
+---
+username: admin
+password: cisco
+platform: cisco_ios
+
+#Use platfrom--ios when using NAPALM for cisco device and eos for for arista devices
+...

@@ -1,0 +1,16 @@
+---
+test:
+  username: admin
+  password: cisco
+  platform: cisco_ios
+
+test1:
+  username: admin
+  password: cisco
+  platform: cisco_ios
+#Use platfrom--ios when using NAPALM
+#test2:
+#  username: admin
+#  password: cisco
+#  platform: arista_eos
+#...
